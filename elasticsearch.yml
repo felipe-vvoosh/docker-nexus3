@@ -18,6 +18,9 @@ node.local: true
 http.enabled: true
 discovery.zen.ping.multicast.enabled: false
 
+# Disable watermark checks as the NFS space available is giving negative in ES
+cluster.routing.allocation.disk.threshold_enabled: false
+
 # ======================== Elasticsearch Configuration =========================
 #
 # NOTE: Elasticsearch comes with reasonable defaults for most settings.
