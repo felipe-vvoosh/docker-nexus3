@@ -58,6 +58,8 @@ RUN sed \
     -e "s|java.io.tmpdir=data/tmp|java.io.tmpdir=${NEXUS_DATA}/tmp|g" \
     -i /opt/sonatype/nexus/bin/nexus.vmoptions
 
+COPY elasticsearch.yml /opt/sonatype/nexus/etc/elasticsearch.yml
+
 RUN useradd -r -u 200 -m -c "nexus role account" -d ${NEXUS_DATA} -s /bin/false nexus
 
 VOLUME ${NEXUS_DATA}
